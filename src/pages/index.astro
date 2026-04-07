@@ -10,13 +10,19 @@ import Footer from "../components/Footer.astro";
 import { siteConfig } from "../config";
 import "../styles/global.css";
 
+const withBase = (path: string) => {
+  const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+  const cleanPath = path.replace(/^\/+/, "");
+  return `${base}${cleanPath}`;
+};
+
 const faviconSrc = siteConfig.logoImage?.src
-  ? `${import.meta.env.BASE_URL}${siteConfig.logoImage.src}`
-  : `${import.meta.env.BASE_URL}images/Mucu1.png`;
+  ? withBase(siteConfig.logoImage.src)
+  : withBase("images/Mucu1.png");
 const siteUrl = Astro.site ?? new URL("https://mucunguzi256.github.io");
 const canonicalUrl = new URL(import.meta.env.BASE_URL, siteUrl).href;
 const socialImageSrc = siteConfig.heroImage?.src
-  ? `${import.meta.env.BASE_URL}${siteConfig.heroImage.src}`
+  ? withBase(siteConfig.heroImage.src)
   : faviconSrc;
 const socialImageUrl = new URL(socialImageSrc, siteUrl).href;
 const jsonLd = {

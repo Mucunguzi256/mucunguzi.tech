@@ -6,8 +6,13 @@ const hasPublications =
   siteConfig.publications && siteConfig.publications.length > 0;
 const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
+const withBase = (path: string) => {
+  const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+  const cleanPath = path.replace(/^\/+/, "");
+  return `${base}${cleanPath}`;
+};
 const logoSrc = siteConfig.logoImage?.src
-  ? `${import.meta.env.BASE_URL}${siteConfig.logoImage.src}`
+  ? withBase(siteConfig.logoImage.src)
   : null;
 ---
 
