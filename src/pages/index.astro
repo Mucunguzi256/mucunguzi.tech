@@ -19,7 +19,7 @@ const withBase = (path: string) => {
 const faviconSrc = siteConfig.logoImage?.src
   ? withBase(siteConfig.logoImage.src)
   : withBase("images/Mucu1.png");
-const siteUrl = Astro.site ?? new URL("https://mucunguzi256.github.io");
+const siteUrl = Astro.site ?? new URL("https://mucunguzi.tech");
 const canonicalUrl = new URL(import.meta.env.BASE_URL, siteUrl).href;
 const socialImageSrc = siteConfig.heroImage?.src
   ? withBase(siteConfig.heroImage.src)
