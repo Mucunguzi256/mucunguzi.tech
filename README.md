@@ -1,20 +1,16 @@
 <img width="1943" height="1093" alt="image" src="https://github.com/user-attachments/assets/cc2ff955-17c2-48c7-81c8-479a0f061850" />
 
-# DevPortfolio Template
+# Mucunguzi Moses Portfolio
 
-A modern, minimalist portfolio template built with Astro and Tailwind CSS. Perfect for developers looking to showcase their skills, experience, and projects in a clean, professional way.
+I am building African-first digital solutions. With 5 years across web3, civic tech, and product development, I bridge the gap between cutting-edge technology and real-world African needs. Currently building klassapp.xyz. I am committed to open source, digital sovereignty, and a stronger Global South tech ecosystem.
 
-This was completely rebuilt from the ground up from V1. This template was built to be entirely ready to go with a quick config edit (see below) but also provides the ability to easily extend in whatever way you want.
-
-This template also comes with `CLAUDE.md` and `.cursor/rules` files for easy integration with your existing AI workflows.
-
-> **📬 Connect & Share!**  
-> For questions and updates, feel free to reach out on [**X (Twitter)**](https://x.com/rfitzio).  
-> If you've built and published your personal site with this template, I'd love to see it! Send me a DM 🚀
+🖥️ See my portfolio at mucunguzi.tech  
+✉️ You can contact me at moemucu@gmail.com  
+⚡ I love politics and hate politicians. I listen to country music.
 
 ## Preview
 
-To view a live preview of the site, [click here](https://ryanfitzgerald.github.io/devportfolio/).
+To view the live site, visit [mucunguzi.tech](https://mucunguzi.tech).
 
 ## Built With
 
@@ -27,7 +23,7 @@ To view a live preview of the site, [click here](https://ryanfitzgerald.github.i
 
 ### Configuration
 
-The template is designed to be easily customizable through the `src/config.ts` file. This single file controls:
+The portfolio is configured through `src/config.ts`. This single file controls:
 
 - **Personal Information**: Name, title, description
 - **Accent Color**: Primary color theme (changing this will change the accent color site wide)
@@ -39,6 +35,16 @@ The template is designed to be easily customizable through the `src/config.ts` f
 - **Education**: Educational background and achievements
 
 If skills, projects, experience, or education are removed from the config, those sections will be hidden entirely.
+
+### Current profile
+
+- African-first digital solutions
+- 5 years across web3, civic tech, and product development
+- Currently building `klassapp.xyz`
+- Focused on open source, digital sovereignty, and the Global South tech ecosystem
+- Portfolio: `mucunguzi.tech`
+- Contact: `moemucu@gmail.com`
+- Skills: `PHP`, `Solidity`, `React`, `Next.js`
 
 ### Example structures
 
@@ -64,12 +70,12 @@ social: {
 
 #### About Section
 ```typescript
-aboutMe: "A paragraph describing yourself, your background, interests, and what you're passionate about. This appears in the About section of your portfolio."
+aboutMe: "I am building African-first digital solutions. With 5 years across web3, civic tech, and product development, I bridge the gap between cutting-edge technology and real-world African needs. Currently building klassapp.xyz. I am committed to open source, digital sovereignty, and a stronger Global South tech ecosystem."
 ```
 
 #### Skills
 ```typescript
-skills: ["JavaScript", "React", "Node.js", "Python", "AWS", "Docker"]
+skills: ["PHP", "Solidity", "React", "Next.js"]
 ```
 
 #### Projects
@@ -123,9 +129,11 @@ The template uses [Tabler Icons](https://tabler.io/icons) for all icons. If you 
 ## Project Structure
 
 ```
-devportfolio/
+mucunguzi.tech/
 ├── public/
-│   └── favicon.svg          # Site favicon
+│   ├── CNAME                # Custom domain for GitHub Pages
+│   ├── Mucu1.png            # Favicon and logo image
+│   └── images/              # Gallery and profile images
 ├── src/
 │   ├── components/          # Astro components
 │   │   ├── About.astro      # About section
@@ -151,8 +159,8 @@ devportfolio/
 If you'd like to run it locally:
 
 ```
-git clone https://github.com/RyanFitzgerald/devportfolio.git
-cd devportfolio
+git clone https://github.com/Mucunguzi256/mucunguzi.tech.git
+cd mucunguzi.tech
 npm install
 ```
 
@@ -164,7 +172,17 @@ npm run dev
 
 ## Deployment
 
-The template can be deployed to any static hosting service easily (and in most cases, completely free). Here are some options:
+The site is deployed with GitHub Pages and a custom domain.
+
+GitHub Pages setup notes:
+
+- The repo uses Astro static output.
+- The custom domain is set to `mucunguzi.tech`.
+- The `public/CNAME` file is present so Pages knows the custom domain.
+- The workflow in `.github/workflows/deploy.yml` deploys the `dist` folder with GitHub Actions.
+- If GitHub Pages shows a 404, confirm Pages is enabled in the repository settings and the source is set to GitHub Actions.
+
+For other hosting options, you can still deploy as a static site easily. Here are some alternatives:
 
 - To deploy with Netlify, [click here](https://docs.astro.build/en/guides/deploy/netlify/).
 - To deploy with Vercel, [click here](https://docs.astro.build/en/guides/deploy/vercel/).
@@ -184,4 +202,4 @@ This project is fully and completely MIT. See LICENSE.md.
 
 ## Questions?
 
-Feel free to reach out on [X (Twitter)](https://x.com/rfitzio) if you have any questions or need help.
+Feel free to reach out at [moemucu@gmail.com](mailto:moemucu@gmail.com) if you have any questions or need help.
