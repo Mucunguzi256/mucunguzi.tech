@@ -9,6 +9,24 @@ export const siteConfig = {
     twitter: "https://x.com/Mucu256",
     github: "https://github.com/Mucunguzi256",
   },
+  logoImage: {
+    src: "Mucu1.png",
+    alt: "Mucunguzi Moses logo photo",
+  },
+  heroImage: {
+    src: "Mucu1.png",
+    alt: "Mucunguzi Moses portrait",
+  },
+  aboutImages: [
+    {
+      src: "images/vitalik.jpeg",
+      alt: "Mucunguzi Moses with Vitalik Buterin",
+    },
+    {
+      src: "images/Mucubit.png",
+      alt: "Mucunguzi Moses portrait",
+    },
+  ],
   aboutMe:
     "I'm a fullstack developer based in Kampala, passionate about building modern web applications and exploring blockchain technology. I love React for frontend development and Node.js for backend systems. I'm currently learning Solidity and exploring Web3 technologies. When I'm not coding, I enjoy discussing politics, listening to country music, and staying updated with the latest tech trends.",
   skills: [

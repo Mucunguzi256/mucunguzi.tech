@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 // https://astro.build/config
 export default defineConfig({
   site: "https://mucunguzi256.github.io",
-  base: "/mucunguzi.tech",
+  base: process.env.NODE_ENV === "production" ? "/mucunguzi.tech" : "/",
   output: "static",
   build: {
     assets: "assets",

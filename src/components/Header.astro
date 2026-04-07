@@ -2,8 +2,13 @@
 import { siteConfig } from "../config";
 
 const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+const hasPublications =
+  siteConfig.publications && siteConfig.publications.length > 0;
 const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
+const logoSrc = siteConfig.logoImage?.src
+  ? `${import.meta.env.BASE_URL}${siteConfig.logoImage.src}`
+  : null;
 ---
 
 <header
@@ -12,6 +17,21 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 >
   <nav class="max-w-7xl mx-auto px-8 py-4">
     <ul class="flex items-center gap-8 justify-center">
+      {
+        logoSrc && (
+          <li class="absolute left-8 top-1/2 -translate-y-1/2">
+            <a href="#hero" aria-label={siteConfig.name} class="block">
+              <img
+                src={logoSrc}
+                alt={siteConfig.logoImage?.alt || siteConfig.name}
+                class="h-11 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                loading="eager"
+                decoding="async"
+              />
+            </a>
+          </li>
+        )
+      }
       <li>
         <a
           href="#about"
@@ -28,6 +48,18 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
               class="text-gray-700 hover:text-black transition-colors font-medium"
             >
               Projects
+            </a>
+          </li>
+        )
+      }
+      {
+        hasPublications && (
+          <li>
+            <a
+              href="#publications"
+              class="text-gray-700 hover:text-black transition-colors font-medium"
+            >
+              Publications
             </a>
           </li>
         )
