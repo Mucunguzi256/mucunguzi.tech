@@ -37,25 +37,19 @@ const resolvedAboutImages = aboutImages.map((image) => ({
           aboutImages.length > 0 && (
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {resolvedAboutImages.map((image) => (
-                image.src.includes("Mucubit.png") ? (
-                  <img
-                    src={image.src}
-                    alt={image.alt || "About image"}
-                    class="h-56 w-full object-contain"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ) : (
-                  <div class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
-                    <img
-                      src={image.src}
-                      alt={image.alt || "About image"}
-                      class="h-56 w-full object-cover transition-transform duration-300 hover:scale-[1.02]"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                )
+                image.src.includes("Mucubit.png")
+                  ? null // Hide this image
+                  : (
+                    <div class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+                      <img
+                        src={image.src}
+                        alt={image.alt || "About image"}
+                        class="h-56 w-full object-cover transition-transform duration-300 hover:scale-[1.02]"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  )
               ))}
             </div>
           )
