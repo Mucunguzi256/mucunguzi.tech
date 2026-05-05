@@ -1,0 +1,10 @@
+{
+  "name": "mcp-builder",
+  "description": "",
+  "source": "anthropics/skills",
+  "sourceType": "github",
+  "subpath": "mcp-builder",
+  "installedAt": "2026-05-05T08:44:17.931Z",
+  "enabled": true,
+  "checksum": "0f4592dcb53cf2b5"
+}

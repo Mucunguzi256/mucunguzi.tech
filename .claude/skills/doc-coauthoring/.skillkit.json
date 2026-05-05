@@ -1,0 +1,10 @@
+{
+  "name": "doc-coauthoring",
+  "description": "",
+  "source": "anthropics/skills",
+  "sourceType": "github",
+  "subpath": "doc-coauthoring",
+  "installedAt": "2026-05-05T08:44:17.880Z",
+  "enabled": true,
+  "checksum": "2e47d78846faeea4"
+}

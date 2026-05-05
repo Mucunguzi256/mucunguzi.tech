@@ -1,0 +1,10 @@
+{
+  "name": "skill-creator",
+  "description": "",
+  "source": "anthropics/skills",
+  "sourceType": "github",
+  "subpath": "skill-creator",
+  "installedAt": "2026-05-05T08:44:17.976Z",
+  "enabled": true,
+  "checksum": "dcd4803e61e913e6"
+}

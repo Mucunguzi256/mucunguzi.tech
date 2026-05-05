@@ -1,0 +1,10 @@
+{
+  "name": "pptx",
+  "description": "",
+  "source": "anthropics/skills",
+  "sourceType": "github",
+  "subpath": "pptx",
+  "installedAt": "2026-05-05T08:44:17.961Z",
+  "enabled": true,
+  "checksum": "e5b0df918cbe9d62"
+}

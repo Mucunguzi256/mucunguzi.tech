@@ -1,0 +1,10 @@
+{
+  "name": "frontend-design",
+  "description": "",
+  "source": "anthropics/skills",
+  "sourceType": "github",
+  "subpath": "frontend-design",
+  "installedAt": "2026-05-05T08:44:17.910Z",
+  "enabled": true,
+  "checksum": "b81e2ff87ed8fa4d"
+}

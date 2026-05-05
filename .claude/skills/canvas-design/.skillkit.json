@@ -1,0 +1,10 @@
+{
+  "name": "canvas-design",
+  "description": "",
+  "source": "anthropics/skills",
+  "sourceType": "github",
+  "subpath": "canvas-design",
+  "installedAt": "2026-05-05T08:44:17.871Z",
+  "enabled": true,
+  "checksum": "a1f288079624402f"
+}

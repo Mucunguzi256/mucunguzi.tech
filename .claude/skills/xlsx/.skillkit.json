@@ -1,0 +1,10 @@
+{
+  "name": "xlsx",
+  "description": "",
+  "source": "anthropics/skills",
+  "sourceType": "github",
+  "subpath": "xlsx",
+  "installedAt": "2026-05-05T08:44:18.035Z",
+  "enabled": true,
+  "checksum": "dd316db7785a6be1"
+}

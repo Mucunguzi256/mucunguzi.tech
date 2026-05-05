@@ -1,0 +1,10 @@
+{
+  "name": "theme-factory",
+  "description": "",
+  "source": "anthropics/skills",
+  "sourceType": "github",
+  "subpath": "theme-factory",
+  "installedAt": "2026-05-05T08:44:17.999Z",
+  "enabled": true,
+  "checksum": "c35893e221e28895"
+}
