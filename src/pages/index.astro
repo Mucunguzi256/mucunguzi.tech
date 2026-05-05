@@ -1,12 +1,4 @@
 ---
-import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
-import About from "../components/About.astro";
-import Projects from "../components/Projects.astro";
-import Publications from "../components/Publications.astro";
-import Experience from "../components/Experience.astro";
-import Education from "../components/Education.astro";
-import Footer from "../components/Footer.astro";
 import { siteConfig } from "../config";
 import "../styles/global.css";
 
@@ -40,6 +32,9 @@ const jsonLd = {
   ],
   knowsAbout: siteConfig.keywords,
 };
+
+const primaryProject = siteConfig.projects.find(p => (p as any).featured) || siteConfig.projects[0];
+const secondaryProjects = siteConfig.projects.filter(p => p !== primaryProject);
 ---
 
 <html lang="en">
@@ -66,22 +61,290 @@ const jsonLd = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <title>{siteConfig.name} - {siteConfig.title}</title>
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
-  <body>
-    <Header />
-    <section>
-      <Hero />
-      <About />
-      <Projects />
-      <Experience />
-      <Education />
-    </section>
-    <Publications />
-    <Footer />
+  <body class="bg-[#0a0a0f] text-gray-100 font-outfit antialiased">
+    <div class="noise-overlay"></div>
+    <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#0a0a0f]/80 border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="/" class="text-xl font-bold tracking-tight text-white font-mono">
+            <span class="text-cyan-400">&lt;</span>Mucunguzi<span class="text-cyan-400">/&gt;</span>
+          </a>
+          <div class="hidden md:flex items-center gap-8">
+            <a href="#projects" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Projects</a>
+            <a href="#experience" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Experience</a>
+            <a href="#about" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">About</a>
+            <a href="#contact" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Contact</a>
+          </div>
+          <button id="theme-toggle" class="p-2 bg-transparent hover:bg-white/5 transition-all duration-300 group">
+            <span class="text-cyan-400 font-mono text-sm group-hover:animate-pulse">{ }</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-24">
+      <section class="min-h-[90vh] px-4 sm:px-6 lg:px-8 py-12">
+        <div class="max-w-7xl mx-auto h-full">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center h-full">
+            <div class="lg:col-span-7 order-2 lg:order-1">
+              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono mb-6">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                Available for projects
+              </span>
+              <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-4 leading-tight">
+                I'm <span class="text-cyan-400">Mucunguzi Moses</span>
+              </h1>
+              <div class="lg:hidden mb-6">
+                <div class="w-48 h-48 mx-auto overflow-hidden">
+                  <img 
+                    src={socialImageSrc} 
+                    alt={siteConfig.name} 
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <p class="text-xl sm:text-2xl text-gray-300 mb-2">{siteConfig.title}</p>
+              <p class="text-lg text-gray-400 mb-8 max-w-xl">
+                {siteConfig.aboutMe}
+              </p>
+              <div class="flex flex-wrap gap-3 mb-8">
+                {siteConfig.skills.map((skill) => (
+                  <span class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-sm">{skill}</span>
+                ))}
+              </div>
+              <div class="flex flex-wrap items-center gap-4">
+                {siteConfig.social.email && (
+                  <a href={`mailto:${siteConfig.social.email}`} class="group px-6 py-3 bg-cyan-500 text-white font-semibold transition-all duration-300 hover:bg-cyan-400 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/30">
+                    Get in Touch
+                  </a>
+                )}
+                <a href="#projects" class="group px-6 py-3 border border-white/20 text-white font-medium transition-all duration-300 hover:bg-white/10 hover:border-amber-400 hover:text-amber-400 hover:scale-105">
+                  View Work
+                </a>
+                <a 
+                  href="https://calendly.com/moemucu" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="group px-6 py-3 border border-amber-500/50 text-amber-400 font-mono text-sm transition-all duration-300 hover:bg-amber-500/20 hover:border-amber-400 hover:scale-105 hover:shadow-lg hover:shadow-amber-500/20"
+                >
+                  {`{Contact Me}`}
+                </a>
+              </div>
+            </div>
+            <div class="lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2 hidden lg:block">
+              <div class="relative group">
+                <div class="w-64 h-64 sm:w-80 sm:h-96 overflow-hidden">
+                  <img 
+                    src={socialImageSrc} 
+                    alt={siteConfig.name} 
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="px-4 sm:px-6 lg:px-8 py-16">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl font-bold text-white mb-8">
+            <span class="text-cyan-400">//</span> About Me
+          </h2>
+          <!-- <div class="mb-8 flex justify-center">
+            <img 
+              src={withBase("images/vitalik.jpeg")} 
+              alt="Mucunguzi Moses with Vitalik Buterin" 
+              class="w-48 h-48 sm:w-64 sm:h-64 object-cover"
+            />
+          </div> -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bento-card p-6">
+              <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                {siteConfig.aboutMe}
+              </p>
+              <div class="flex flex-wrap gap-3">
+                {siteConfig.skills.map((skill) => (
+                  <span class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-sm hover:border-cyan-500/30 hover:text-cyan-400 transition-colors cursor-default">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div class="bento-card p-6">
+              <h3 class="text-lg font-semibold text-white mb-4">Education</h3>
+              <div class="space-y-4">
+                {siteConfig.education.map((edu) => (
+                  <div>
+                    <p class="text-sm font-medium text-white">{edu.school}</p>
+                    <p class="text-xs text-gray-500">{edu.degree}</p>
+                    <p class="text-xs text-cyan-500">{edu.dateRange}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="px-4 sm:px-6 lg:px-8 py-16">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl font-bold text-white mb-12">
+            <span class="text-cyan-400">#</span> Projects
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {siteConfig.projects.map((project, idx) => {
+              const isFeatured = (project as any).featured;
+              if (isFeatured) {
+                return (
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" class="bento-card featured-card p-6 md:p-10 group md:col-span-2 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-amber-900/60 via-gray-900/80 to-amber-900/60"></div>
+                    <div class="absolute top-3 right-3 sm:top-4 sm:right-4 px-2 py-1 bg-amber-500 text-gray-900 text-xs font-bold font-mono">
+                      &lt;01/&gt;
+                    </div>
+                    <div class="relative z-10">
+                      <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 group-hover:text-amber-300 transition-colors">
+                        {project.name}
+                      </h3>
+                      <p class="text-sm sm:text-base text-gray-200 mb-4 sm:mb-6 max-w-3xl leading-relaxed">
+                        {project.description}
+                      </p>
+                      {project.skills && project.skills.length > 0 && (
+                        <div class="flex flex-wrap gap-2 mb-4 sm:mb-6">
+                          {project.skills.map((skill) => (
+                            <span class="px-3 py-1.5 bg-amber-500/20 border border-amber-400/60 text-amber-300 text-xs sm:text-sm font-mono">
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      <div class="inline-flex items-center gap-2 bg-amber-500 text-gray-900 px-5 py-2.5 font-bold text-sm hover:bg-amber-400 transition-colors">
+                        <span>View Project</span>
+                        <span>&rarr;</span>
+                      </div>
+                    </div>
+                  </a>
+                );
+              }
+              return (
+                <a href={project.link} target="_blank" rel="noopener noreferrer" class="bento-card project-card p-6 group">
+                  <div class="flex items-start justify-between mb-4">
+                    <span class="text-xs font-mono text-cyan-500">&lt;0{idx + 1}/&gt;</span>
+                    <span class="text-gray-500 group-hover:text-cyan-400 transition-colors">&rarr;</span>
+                  </div>
+                  <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">{project.name}</h3>
+                  <p class="text-sm text-gray-400 line-clamp-3">{project.description}</p>
+                  {project.skills && project.skills.length > 0 && (
+                    <div class="flex flex-wrap gap-2 mt-4">
+                      {project.skills.slice(0, 3).map((skill) => (
+                        <span class="px-2 py-1 bg-white/5 text-xs text-gray-500 font-mono">#{skill}</span>
+                      ))}
+                    </div>
+                  )}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="px-4 sm:px-6 lg:px-8 py-16">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl font-bold text-white mb-12">
+            <span class="text-cyan-400">&amp;</span> Experience
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {siteConfig.experience.map((exp, idx) => (
+              <div class="bento-card p-6 experience-card group">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-xs font-mono text-cyan-400">[{String(idx + 1).padStart(2, '0')}]</span>
+                  <span class="text-xs text-gray-500 font-mono">{exp.dateRange}</span>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-1 group-hover:text-cyan-400 transition-colors">{exp.company}</h3>
+                <p class="text-sm text-gray-400 mb-4">{exp.title}</p>
+                {exp.bullets && exp.bullets.length > 0 && (
+                  <ul class="space-y-2">
+                    {exp.bullets.slice(0, 2).map((bullet) => (
+                      <li class="text-xs text-gray-500 flex items-start gap-2">
+                        <span class="text-cyan-500 font-mono">&gt;</span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      
+
+      <footer id="contact" class="px-4 sm:px-6 lg:px-8 py-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 class="text-2xl font-bold text-white mb-2">{siteConfig.name}</h3>
+              <p class="text-gray-400">{siteConfig.title}</p>
+            </div>
+            <div class="flex items-center gap-6">
+              {siteConfig.social.github && (
+                <a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+              )}
+              {siteConfig.social.linkedin && (
+                <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+              )}
+              {siteConfig.social.twitter && (
+                <a href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+              )}
+              {siteConfig.social.email && (
+                <a href={`mailto:${siteConfig.social.email}`} class="text-gray-400 hover:text-cyan-400 transition-colors">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </a>
+              )}
+            </div>
+          </div>
+          <div class="mt-8 pt-8 border-t border-white/5 text-center">
+            <p class="text-sm text-gray-500 font-mono">&copy; 2026 Mucunguzi Moses</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.bento-card').forEach((card, i) => {
+          card.classList.add('reveal');
+          card.classList.add(`reveal-delay-${(i % 4) + 1}`);
+          observer.observe(card);
+        });
+
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle?.addEventListener('click', () => {
+          document.documentElement.classList.toggle('light');
+        });
+      });
+    </script>
   </body>
 </html>

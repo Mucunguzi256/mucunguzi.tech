@@ -60,59 +60,83 @@ export const siteConfig = {
     {
       name: "AsiliChain",
       description:
-        "A blockchain infrastructure for verifiable supply chains and digital identity in Africa, leveraging Hedera and open standards.",
+        "The financial infrastructure Africa's coffee farmers have never had — built on Mantle Network (Ethereum ZK L2), delivering working capital, EUDR compliance, and 60-second mobile payments from Uganda's own government data.",
       link: "https://asilichain.github.io/docs/",
-      skills: [],
+      skills: ["Mantle Network", "Ethereum L2", "DeFi", "EUDR", "Blockchain"],
+      featured: true,
     },
     {
       name: "KlassApp",
       description:
-        "An African-first edtech and classroom management platform that digitizes school operations and parent-teacher engagement.",
+        "WhatsApp-first African edtech and classroom management platform that digitizes school operations and parent-teacher engagement via WhatsApp.",
       link: "https://klassapp.xyz",
-      skills: [],
+      skills: ["WhatsApp API", "EdTech", "SaaS", "Mobile"],
     },
     {
-      name: "UbunifuSACCO",
+      name: "Ubunifu SACCO",
       description:
-        "A decentralized savings and credit cooperative (SACCO) interface built for African community finance.",
+        "The financial cooperative where Uganda's developers, designers, founders, and digital creatives save, borrow, and grow — structured for how we actually work.",
       link: "https://mucunguzi256.github.io/ubunifu_SACCO/",
-      skills: [],
-    },
-    {
-      name: "Others",
-      description:
-        "https://hfhcd.org/, https://ethnileug.xyz/",
-      link: "https://hfhcd.org/",
-      skills: [],
+      skills: ["FinTech", "SACCO", "DeFi", "Community Finance"],
     },
   ],
   experience: [
     {
-      company: "KlassApp",
-      title: "CEO & Co-Founder",
-      dateRange: "2025",
-      bullets: [],
-    },
-    {
       company: "AsiliChain",
       title: "CEO & Founder",
-      dateRange: "2026",
-      bullets: [],
+      dateRange: "2026 – Present",
+      bullets: [
+        "Building financial infrastructure for Africa's coffee farmers on Mantle Network",
+        "Delivering working capital, EUDR compliance, and 60-second mobile payments",
+        "Integrating Uganda's government data for verified farmer identities",
+      ],
     },
     {
-      company: "Ethereum Community Contributor",
-      title: "Ethereum Community Contributor",
-      dateRange: "2020 – Present",
-      bullets: [],
+      company: "KlassApp",
+      title: "CEO & Co-Founder",
+      dateRange: "2025 – Present",
+      bullets: [
+        "WhatsApp-first edtech platform digitizing African school operations",
+        "Parent-teacher engagement via WhatsApp API",
+        "Growing user base across Uganda's schools",
+      ],
     },
     {
       company: "Freelance / Self-employed",
-      title: "Freelance / Self-employed",
+      title: "Fullstack Developer",
       dateRange: "2023 – Present",
-      bullets: [],
+      bullets: [
+        "Building Web3 and blockchain solutions for African markets",
+        "Consulting on DeFi, supply chain, and digital identity projects",
+      ],
+    },
+    {
+      company: "Ethereum Community Contributor",
+      title: "Community Contributor",
+      dateRange: "2020 – Present",
+      bullets: [
+        "Organizing Ethereum Uganda meetups and workshops",
+        "Contributing to open-source Ethereum projects",
+      ],
     },
   ],
   education: [
+    {
+      school: "Blockchain Development – Alchemy University",
+      degree: "Blockchain Development (Smart Contracts, CCIP, HCS)",
+      dateRange: "2023",
+      achievements: [
+        "https://www.alchemy.com/university",
+      ],
+    },
+    {
+      school: "Web Development – ALX-Africa",
+      degree: "Web Development",
+      dateRange: "2022",
+      achievements: [
+        "https://www.alxafrica.com/",
+      ],
+    },
     {
       school: "Makerere University",
       degree: "BJCO, GRC, SLLC (85th Guild)",
@@ -127,22 +151,6 @@ export const siteConfig = {
       dateRange: "2011 – 2014",
       achievements: [
         "https://kingscollegebudo.ac.ug/",
-      ],
-    },
-    {
-      school: "Web Development – ALX-Africa",
-      degree: "Web Development",
-      dateRange: "2022",
-      achievements: [
-        "https://www.alxafrica.com/",
-      ],
-    },
-    {
-      school: "Blockchain Development – Alchemy University",
-      degree: "Blockchain Development (Smart Contracts, CCIP, HCS)",
-      dateRange: "2023",
-      achievements: [
-        "https://www.alchemy.com/university",
       ],
     },
   ],
