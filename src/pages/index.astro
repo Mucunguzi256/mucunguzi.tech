@@ -97,38 +97,51 @@ const skillsGrid = [
     <main class="pt-24">
       <section class="min-h-[90vh] px-4 sm:px-6 lg:px-8 py-12">
         <div class="max-w-7xl mx-auto h-full">
-          <div class="max-w-4xl">
-            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono mb-6">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              Currently building AsiliChain & KlassApp
-            </span>
-            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-4 leading-tight font-mono">
-              Mucunguzi Moses
-            </h1>
-            <p class="text-xl sm:text-2xl text-cyan-400 font-mono mb-6">Fullstack Developer · Web3 · African-first</p>
-            <p class="text-lg text-gray-400 mb-8 max-w-2xl leading-relaxed">
-              {siteConfig.heroBio}
-            </p>
-            <div class="flex flex-wrap gap-2 mb-8">
-              {siteConfig.skills.map((skill) => (
-                <span class="px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-gray-300 text-sm font-mono">{skill}</span>
-              ))}
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 max-w-4xl">
+              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Currently building AsiliChain & KlassApp
+              </span>
+              <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-4 leading-tight font-mono">
+                Mucunguzi Moses
+              </h1>
+              <p class="text-xl sm:text-2xl text-cyan-400 font-mono mb-6">Fullstack Developer · Web3 · African-first</p>
+              <p class="text-lg text-gray-400 mb-8 max-w-2xl leading-relaxed">
+                {siteConfig.heroBio}
+              </p>
+              <div class="flex flex-wrap gap-2 mb-8">
+                {siteConfig.skills.map((skill) => (
+                  <span class="px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-gray-300 text-sm font-mono">{skill}</span>
+                ))}
+              </div>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <a 
+                  href={siteConfig.social.calendly || "https://calendly.com/moemucu"} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center px-6 py-3 bg-cyan-500 text-white font-semibold font-mono transition-all duration-300 hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/30 hover:-translate-y-0.5"
+                >
+                  Contract Me
+                </a>
+                <a 
+                  href="#projects"
+                  class="inline-flex items-center justify-center px-6 py-3 border border-amber-500/50 text-amber-400 font-mono transition-all duration-300 hover:bg-amber-500/10 hover:border-amber-400 hover:-translate-y-0.5"
+                >
+                  View Projects
+                </a>
+              </div>
             </div>
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a 
-                href={siteConfig.social.calendly || "https://calendly.com/moemucu"} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center px-6 py-3 bg-cyan-500 text-white font-semibold font-mono transition-all duration-300 hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/30 hover:-translate-y-0.5"
-              >
-                Contract Me
-              </a>
-              <a 
-                href="#projects"
-                class="inline-flex items-center justify-center px-6 py-3 border border-amber-500/50 text-amber-400 font-mono transition-all duration-300 hover:bg-amber-500/10 hover:border-amber-400 hover:-translate-y-0.5"
-              >
-                View Projects
-              </a>
+            <div class="lg:col-span-5 flex justify-center lg:justify-end">
+              <img
+                src="/images/mucudev.png"
+                alt="Mucunguzi Moses speaking at a tech event"
+                width="420"
+                height="460"
+                loading="eager"
+                decoding="async"
+                class="hero-photo"
+              />
             </div>
           </div>
         </div>
