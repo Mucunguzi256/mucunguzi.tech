@@ -15,7 +15,7 @@ const siteUrl = Astro.site ?? new URL("https://mucunguzi.tech");
 const canonicalUrl = new URL(import.meta.env.BASE_URL, siteUrl).href;
 const socialImageSrc = siteConfig.heroImage?.src
   ? withBase(siteConfig.heroImage.src)
-  : faviconSrc;
+  : withBase("images/mucudev.png");
 const socialImageUrl = new URL(socialImageSrc, siteUrl).href;
 const jsonLd = {
   "@context": "https://schema.org",
