@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Mucunguzi Moses",
-  title: "Fullstack Developer",
+  title: "Fullstack Developer · Web3 · African-first",
   description: "Fullstack Developer passionate about modern web technologies and blockchain",
   keywords: [
     "Mucunguzi Moses",
@@ -27,6 +27,7 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/in/mucunguzi-moses-8bb299171/",
     twitter: "https://x.com/Mucu256",
     github: "https://github.com/Mucunguzi256",
+    calendly: "https://calendly.com/moemucu",
   },
   logoImage: {
     src: "Mucu1.png",
@@ -47,7 +48,9 @@ export const siteConfig = {
     },
   ],
   aboutMe:
-    "I am building African-first digital solutions. With 5 years across web3, civic tech, and product development, I bridge the gap between cutting-edge technology and real-world African needs. Currently building AsiliChain & klassapp.xyz. I am committed to open source, digital sovereignty, and a stronger Global South tech ecosystem.",
+    "Based in Kampala, Uganda. I've spent 5 years at the intersection of open source infrastructure, blockchain ecosystems, and African market realities. I organized Ethereum Uganda, contributed to EthNile, and built production systems for NGOs, SACCOs, and government-adjacent civic platforms before going all-in on AsiliChain and KlassApp.",
+  heroBio:
+    "I ship production Web3 systems. 5 years building across DeFi, civic tech, and EdTech for African markets — currently taking AsiliChain from pilot to scale on Mantle Network.",
   skills: [
     "PHP",
     "Solidity",
@@ -55,29 +58,36 @@ export const siteConfig = {
     "Next.js",
     "Hedera HCS",
     "Chainlink",
+    "TypeScript",
   ],
   projects: [
     {
       name: "AsiliChain",
+      number: "01",
       description:
-        "The financial infrastructure Africa's coffee farmers have never had — built on Mantle Network (Ethereum ZK L2), delivering working capital, EUDR compliance, and 60-second mobile payments from Uganda's own government data.",
+        "On-chain agricultural traceability and DeFi lending for Uganda's coffee supply chain — EUDR compliance, pre-harvest crop collateralisation, 60-second mobile payments.",
+      outcomeStat: "Pilot covers 200+ smallholder farmers, Bugisu region",
       link: "https://asilichain.github.io/docs/",
-      skills: ["Mantle Network", "Ethereum L2", "DeFi", "EUDR", "Blockchain"],
+      skills: ["Mantle Network", "Solidity", "Next.js", "Chainlink", "Hedera HCS"],
       featured: true,
     },
     {
       name: "KlassApp",
+      number: "02",
       description:
-        "WhatsApp-first African edtech and classroom management platform that digitizes school operations and parent-teacher engagement via WhatsApp.",
+        "WhatsApp-first school management SaaS for East Africa — attendance, fees, parent comms, and timetabling via WhatsApp with zero app install required.",
+      outcomeStat: "36-week build roadmap, MVP targeting Uganda launch 2026",
       link: "https://klassapp.xyz",
-      skills: ["WhatsApp API", "EdTech", "SaaS", "Mobile"],
+      skills: ["Laravel", "Evolution API", "Typebot", "n8n", "MTN MoMo"],
     },
     {
-      name: "Ubunifu SACCO",
+      name: "Hope for Humanity",
+      number: "03",
       description:
-        "The financial cooperative where Uganda's developers, designers, founders, and digital creatives save, borrow, and grow — structured for how we actually work.",
-      link: "https://mucunguzi256.github.io/ubunifu_SACCO/",
-      skills: ["FinTech", "SACCO", "DeFi", "Community Finance"],
+        "Full donation platform for a Uganda-based charity — custom WordPress build with GiveWP and Flutterwave for local payment processing.",
+      outcomeStat: "Live donation processing in UGX via Flutterwave",
+      link: "https://hopeforhumanityug.org/",
+      skills: ["WordPress", "GiveWP", "Flutterwave", "PHP"],
     },
   ],
   experience: [
@@ -86,9 +96,9 @@ export const siteConfig = {
       title: "CEO & Founder",
       dateRange: "2026 – Present",
       bullets: [
-        "Building financial infrastructure for Africa's coffee farmers on Mantle Network",
-        "Delivering working capital, EUDR compliance, and 60-second mobile payments",
-        "Integrating Uganda's government data for verified farmer identities",
+        "Architected full Mantle Network smart contract system for crop collateralisation and EUDR traceability",
+        "Integrated Chainlink price feeds and Hedera HCS for immutable supply chain audit logs",
+        "Leading pre-seed fundraising and grant applications across Celo Africa DAO and Core DAO",
       ],
     },
     {
@@ -96,9 +106,9 @@ export const siteConfig = {
       title: "CEO & Co-Founder",
       dateRange: "2025 – Present",
       bullets: [
-        "WhatsApp-first edtech platform digitizing African school operations",
-        "Parent-teacher engagement via WhatsApp API",
-        "Growing user base across Uganda's schools",
+        "Designed WhatsApp-native school management architecture on Evolution API and Typebot",
+        "Built MTN MoMo fee collection flow for Ugandan schools",
+        "Completed 36-week technical roadmap and co-founder equity structure",
       ],
     },
     {
@@ -106,17 +116,18 @@ export const siteConfig = {
       title: "Fullstack Developer",
       dateRange: "2023 – Present",
       bullets: [
-        "Building Web3 and blockchain solutions for African markets",
-        "Consulting on DeFi, supply chain, and digital identity projects",
+        "Delivered charity donation platform for Hope for Humanity with Flutterwave UGX processing",
+        "Built Ubunifu SACCO documentation site on Docusaurus v3",
+        "Copywriting and web builds for Uganda tourism operators and NGOs",
       ],
     },
     {
-      company: "Ethereum Community Contributor",
+      company: "Ethereum Community",
       title: "Community Contributor",
       dateRange: "2020 – Present",
       bullets: [
-        "Organizing Ethereum Uganda meetups and workshops",
-        "Contributing to open-source Ethereum projects",
+        "Organized Ethereum Uganda meetups and EthNile contributor",
+        "Civic AI chatbot NRM Kimeeza — WhatsApp bot for citizen engagement",
       ],
     },
   ],
