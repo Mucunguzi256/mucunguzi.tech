@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Congratulations Hon. Henry Musasizi Ariganyira — RCL & The Youth Fraternity</title>
+<meta name="description" content="Rubanda Corporate League & The Youth Fraternity congratulate Hon. Henry Musasizi Ariganyira, Minister of Finance, Planning and Economic Development.">
+<style>
+  /* ============================================================
+     RCL Congratulations Flyer — Hon. Henry Musasizi Ariganyira
+     Brand palette extracted from RCL_logo.svg
+     - Primary dark:   #1D1E23
+     - Brand accent:   #F08D17 (orange)
+     - Warm secondary: #A68A5C (tan/gold)
+     - Soft dark:      #37373A
+     - Background:     #FBF7F0 (warm off-white)
+     ============================================================ */
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #E8E2D5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #1D1E23;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: #FBF7F0;
+    padding: 0;
+    margin: 0;
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+  }
+
+  .flyer {
+    width: 1080px;
+    height: 1080px;
+    background-color: #FBF7F0;
+    background-image:
+      /* Top brand-orange accent bar */
+      linear-gradient(180deg,
+        #F08D17 0px, #F08D17 10px,
+        transparent 10px, transparent 18px,
+        rgba(240, 141, 23, 0.18) 18px, rgba(240, 141, 23, 0.18) 22px,
+        transparent 22px),
+      /* Bottom brand-tan accent bar */
+      linear-gradient(0deg,
+        #A68A5C 0px, #A68A5C 8px,
+        transparent 8px, transparent 16px,
+        rgba(166, 138, 92, 0.20) 16px, rgba(166, 138, 92, 0.20) 20px,
+        transparent 20px),
+      /* Diagonal weave pattern */
+      repeating-linear-gradient(45deg,
+        transparent 0px, transparent 26px,
+        rgba(29, 30, 35, 0.022) 26px, rgba(29, 30, 35, 0.022) 27px),
+      repeating-linear-gradient(-45deg,
+        transparent 0px, transparent 26px,
+        rgba(240, 141, 23, 0.025) 26px, rgba(240, 141, 23, 0.025) 27px),
+      /* Soft warm radial highlights */
+      radial-gradient(ellipse 60% 50% at 88% 6%,
+        rgba(240, 141, 23, 0.16) 0%, transparent 65%),
+      radial-gradient(ellipse 55% 45% at 6% 96%,
+        rgba(166, 138, 92, 0.18) 0%, transparent 65%),
+      /* Celebration gold glow behind the photo area */
+      radial-gradient(circle 360px at 50% 58%,
+        rgba(240, 141, 23, 0.10) 0%, transparent 70%),
+      /* Main cream gradient base */
+      linear-gradient(165deg,
+        #FFFCF5 0%,
+        #FBF7F0 45%,
+        #F4ECDF 100%);
+    border: 2px solid #1D1E23;
+    box-shadow:
+      0 0 0 6px #FBF7F0,
+      0 0 0 8px #1D1E23,
+      0 30px 80px rgba(29, 30, 35, 0.30);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 44px 60px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ---------- CORNER MOTIFS (top-right weave, bottom-left weave) ---------- */
+  .flyer::before {
+    content: "";
+    position: absolute;
+    top: 32px; right: 32px;
+    width: 280px; height: 280px;
+    background-image:
+      linear-gradient(45deg, transparent 47%, rgba(166,138,92,0.12) 48%, rgba(166,138,92,0.12) 52%, transparent 53%),
+      linear-gradient(-45deg, transparent 47%, rgba(166,138,92,0.12) 48%, rgba(166,138,92,0.12) 52%, transparent 53%);
+    background-size: 24px 24px;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+  .flyer::after {
+    content: "";
+    position: absolute;
+    bottom: 32px; left: 32px;
+    width: 280px; height: 280px;
+    background-image:
+      linear-gradient(45deg, transparent 47%, rgba(166,138,92,0.12) 48%, rgba(166,138,92,0.12) 52%, transparent 53%),
+      linear-gradient(-45deg, transparent 47%, rgba(166,138,92,0.12) 48%, rgba(166,138,92,0.12) 52%, transparent 53%);
+    background-size: 24px 24px;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  /* ---------- HEADER (senders) ---------- */
+  .senders {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 4px;
+    align-self: stretch;
+  }
+  .senders .logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .senders .emblem {
+    height: 78px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(29,30,35,0.18));
+  }
+  .senders .emblem.rcl {
+    height: 96px;
+  }
+  .senders .org {
+    font-size: 19px;
+    font-weight: 800;
+    color: #1D1E23;
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    line-height: 1.2;
+  }
+  .senders .ampersand {
+    font-size: 22px;
+    font-weight: 900;
+    color: #F08D17;
+    line-height: 1;
+    margin: 1px 0;
+    letter-spacing: 0;
+  }
+  .senders .divider {
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #F08D17, #A68A5C, transparent);
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+
+  /* ---------- CONGRATS BANNER ---------- */
+  .congrats {
+    position: relative;
+    z-index: 1;
+    margin: 18px 0 8px;
+  }
+  .congrats .ribbon-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 6px;
+  }
+  .congrats .star {
+    width: 24px;
+    height: 24px;
+    background: #F08D17;
+    clip-path: polygon(
+      50% 0%, 61% 35%, 98% 35%, 68% 57%,
+      79% 91%, 50% 70%, 21% 91%, 32% 57%,
+      2% 35%, 39% 35%
+    );
+    filter: drop-shadow(0 2px 0 rgba(216, 120, 10, 0.35));
+  }
+  .congrats .star.tan { background: #A68A5C; }
+  .congrats h1 {
+    margin: 0;
+    font-size: 84px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, #F08D17 0%, #D8780A 60%, #B85F00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter:
+      drop-shadow(0 1px 0 rgba(255, 255, 255, 0.45))
+      drop-shadow(0 2px 0 rgba(216, 120, 10, 0.25));
+  }
+  .congrats .subtitle {
+    margin: 2px 0 0;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1D1E23;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    opacity: 0.75;
+  }
+
+  /* ---------- PORTRAIT ---------- */
+  .portrait-wrap {
+    position: relative;
+    z-index: 1;
+    margin: 16px 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+  }
+  .message {
+    max-width: 360px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.45;
+    color: #1D1E23;
+    font-weight: 500;
+    font-style: italic;
+    text-align: left;
+    flex-shrink: 0;
+  }
+  .message .rukiga {
+    display: block;
+    margin-top: 12px;
+    font-size: 22px;
+    font-weight: 900;
+    font-style: italic;
+    color: #F08D17;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 0 rgba(216, 120, 10, 0.18);
+  }
+  .portrait-ring {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background:
+      conic-gradient(from 0deg, #F08D17 0deg, #A68A5C 90deg, #1D1E23 180deg, #A68A5C 270deg, #F08D17 360deg);
+    padding: 5px;
+    box-shadow:
+      0 0 0 4px #FBF7F0,
+      0 0 0 6px #1D1E23,
+      0 18px 50px rgba(29, 30, 35, 0.35);
+    flex-shrink: 0;
+  }
+  .portrait-ring img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 18%;
+  }
+  /* Treasury building icon — now a flex item, only on the right */
+  .treasury-icon {
+    width: 78px;
+    height: auto;
+    filter: drop-shadow(0 3px 0 rgba(216, 120, 10, 0.30));
+    flex-shrink: 0;
+  }
+
+  /* ---------- NAME & TITLE ---------- */
+  .identity {
+    position: relative;
+    z-index: 1;
+    margin-top: 2px;
+  }
+  .identity .honorific {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #A68A5C;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 2px;
+  }
+  .identity .name {
+    display: block;
+    margin: 0;
+    font-size: 40px;
+    line-height: 1.05;
+    font-weight: 900;
+    color: #1D1E23;
+    letter-spacing: -0.5px;
+  }
+  .identity .name-accent {
+    display: block;
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, #F08D17 0%, #A68A5C 100%);
+    margin: 10px auto 10px;
+    border-radius: 3px;
+    box-shadow: 0 2px 0 rgba(216, 120, 10, 0.25);
+  }
+  .identity .title {
+    margin: 0 auto;
+    max-width: 760px;
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 600;
+    color: #1D1E23;
+    letter-spacing: 0.3px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  .footer {
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
+    padding-top: 12px;
+    width: 100%;
+  }
+  .footer .ribbon {
+    display: inline-block;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1D1E23;
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    background: linear-gradient(90deg, rgba(240,141,23,0.10) 0%, rgba(166,138,92,0.10) 100%);
+    border: 1px solid rgba(166,138,92,0.45);
+    border-radius: 999px;
+  }
+  .footer .signoff {
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #A68A5C;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+  <main class="flyer" role="img" aria-label="Rubanda Corporate League and The Youth Fraternity congratulate Hon. Henry Musasizi Ariganyira">
+
+    <header class="senders">
+      <div class="logo-row">
+        <!-- National emblems flanking the RCL logo. SVG files must live next to this HTML. -->
+        <img class="emblem" src="./uganda_coat_of_arms.svg" alt="Coat of Arms of the Republic of Uganda">
+        <img class="emblem rcl" src="./RCL_logo.svg" alt="Rubanda Corporate League logo">
+        <img class="emblem" src="./nrm_flag.svg" alt="National Resistance Movement flag">
+      </div>
+      <p class="org">Rubanda Corporate League</p>
+      <p class="ampersand">&amp;</p>
+      <p class="org">The Youth Fraternity</p>
+      <span class="divider" aria-hidden="true"></span>
+    </header>
+
+    <section class="congrats" aria-label="Congratulations">
+      <div class="ribbon-row" aria-hidden="true">
+        <span class="star tan"></span>
+        <span class="star"></span>
+        <span class="star tan"></span>
+      </div>
+      <h1>Congratulations</h1>
+      <p class="subtitle">Hon. Henry Musasizi Ariganyira</p>
+    </section>
+
+    <section class="portrait-wrap" aria-label="Portrait of Hon. Henry Musasizi Ariganyira">
+      <p class="message">"The Rubanda Youth Fraternity heartily congratulates Hon. Henry Musasizi Ariganyira. Once a youth leader among us, he now stewards the nation's economy — his journey inspires our district, strengthens Kigezi, and proves what Rubanda's young people can become."<span class="rukiga">Kuriika, Omwojo!</span></p>
+      <div class="portrait-ring">
+        <!-- Subject portrait; file must live next to this HTML: ./Hon_Musasiizi.png -->
+        <img src="./Hon_Musasiizi.png" alt="Hon. Henry Musasizi Ariganyira">
+      </div>
+      <svg class="treasury-icon" viewBox="0 0 120 80" aria-hidden="true">
+        <polygon points="10,26 60,6 110,26" fill="#F08D17"/>
+        <rect x="8" y="26" width="104" height="5" fill="#F08D17"/>
+        <rect x="16" y="33" width="7" height="36" fill="#F08D17"/>
+        <rect x="33" y="33" width="7" height="36" fill="#F08D17"/>
+        <rect x="50" y="33" width="7" height="36" fill="#F08D17"/>
+        <rect x="67" y="33" width="7" height="36" fill="#F08D17"/>
+        <rect x="84" y="33" width="7" height="36" fill="#F08D17"/>
+        <rect x="97" y="33" width="7" height="36" fill="#F08D17"/>
+        <rect x="5" y="69" width="110" height="4" fill="#F08D17"/>
+        <rect x="2" y="73" width="116" height="5" fill="#F08D17"/>
+      </svg>
+    </section>
+
+    <section class="identity" aria-label="Identity">
+      <p class="honorific">Hon.</p>
+      <h2 class="name">Henry Musasizi<br>Ariganyira</h2>
+      <span class="name-accent" aria-hidden="true"></span>
+      <p class="title">Minister of Finance, Planning and Economic Development</p>
+    </section>
+
+    <footer class="footer">
+      <p class="ribbon">Service to Rubanda · Service to Uganda</p>
+      <p class="signoff">Rubanda Corporate League &amp; The Youth Fraternity · 5th Outing · 2026</p>
+    </footer>
+
+  </main>
+</body>
+</html>

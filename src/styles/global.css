@@ -259,6 +259,23 @@
   }
 }
 
+/* ---- Syntax Decorations ---- */
+.syntax-deco {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: oklch(from var(--accent) l c h / 0.15);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  z-index: 1;
+}
+
+.syntax-deco-tl { top: var(--space-3); left: var(--space-3); }
+.syntax-deco-tr { top: var(--space-3); right: var(--space-3); }
+.syntax-deco-bl { bottom: var(--space-3); left: var(--space-3); }
+.syntax-deco-br { bottom: var(--space-3); right: var(--space-3); }
+
 /* ---- Reduced Motion ---- */
 @media (prefers-reduced-motion: reduce) {
   .reveal {

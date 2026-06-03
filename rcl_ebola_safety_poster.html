@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RCL Health Safety Poster — Rubanda Corporate League</title>
+<meta name="description" content="Health Safety Guide for RCL 5th Outing participants, 7th June 2026 at Kabirizi Playground.">
+<style>
+  /* ============================================================
+     RCL Health Safety Poster
+     Brand palette extracted from RCL_logo.svg
+     - Primary dark:   #1D1E23
+     - Brand accent:   #F08D17 (orange)
+     - Warm secondary: #A68A5C (tan/gold)
+     - Soft dark:      #37373A
+     - Background:     #FBF7F0 (warm off-white)
+     ============================================================ */
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #E8E2D5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #1D1E23;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: #FBF7F0;
+    padding: 0;
+    margin: 0;
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+  }
+
+  .poster {
+    width: 1080px;
+    height: 1080px;
+    background-color: #3a5a3a;
+    background-image:
+      /* Top brand-orange accent bar */
+      linear-gradient(180deg,
+        #F08D17 0px, #F08D17 10px,
+        transparent 10px, transparent 18px,
+        rgba(240, 141, 23, 0.18) 18px, rgba(240, 141, 23, 0.18) 22px,
+        transparent 22px),
+      /* Bottom brand-tan accent bar */
+      linear-gradient(0deg,
+        #A68A5C 0px, #A68A5C 8px,
+        transparent 8px, transparent 16px,
+        rgba(166, 138, 92, 0.20) 16px, rgba(166, 138, 92, 0.20) 20px,
+        transparent 20px),
+      /* Diagonal weave pattern */
+      repeating-linear-gradient(45deg,
+        transparent 0px, transparent 26px,
+        rgba(29, 30, 35, 0.05) 26px, rgba(29, 30, 35, 0.05) 27px),
+      repeating-linear-gradient(-45deg,
+        transparent 0px, transparent 26px,
+        rgba(240, 141, 23, 0.05) 26px, rgba(240, 141, 23, 0.05) 27px),
+      /* Soft warm radial highlights */
+      radial-gradient(ellipse 60% 50% at 88% 6%,
+        rgba(240, 141, 23, 0.22) 0%, transparent 65%),
+      radial-gradient(ellipse 55% 45% at 6% 96%,
+        rgba(166, 138, 92, 0.24) 0%, transparent 65%),
+      /* Cream-tinted overlay for text readability (heavier in the middle) */
+      linear-gradient(165deg,
+        rgba(255, 252, 245, 0.78) 0%,
+        rgba(251, 247, 240, 0.92) 50%,
+        rgba(244, 236, 223, 0.96) 100%),
+      /* RCL event photo (file must live next to this HTML: ./RCL_bg.jpeg) */
+      url('./RCL_bg.jpeg');
+    background-size:
+      100% 22px,
+      100% 20px,
+      auto, auto,
+      auto, auto,
+      auto,
+      cover;
+    background-position:
+      top, bottom,
+      0 0, 0 0,
+      88% 6%, 6% 96%,
+      center,
+      center 58%;
+    background-repeat:
+      no-repeat, no-repeat,
+      repeat, repeat,
+      no-repeat, no-repeat,
+      no-repeat,
+      no-repeat;
+    border: 2px solid #1D1E23;
+    box-shadow:
+      0 0 0 6px #FBF7F0,
+      0 0 0 8px #1D1E23,
+      0 30px 80px rgba(29, 30, 35, 0.30);
+    display: flex;
+    flex-direction: column;
+    padding: 60px 64px 52px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Decorative corner motifs — subtle diamond grid */
+  .poster::before {
+    content: "";
+    position: absolute;
+    top: 32px; right: 32px;
+    width: 280px; height: 280px;
+    background-image:
+      linear-gradient(45deg, transparent 47%, rgba(240,141,23,0.10) 48%, rgba(240,141,23,0.10) 52%, transparent 53%),
+      linear-gradient(-45deg, transparent 47%, rgba(240,141,23,0.10) 48%, rgba(240,141,23,0.10) 52%, transparent 53%);
+    background-size: 24px 24px;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+  .poster::after {
+    content: "";
+    position: absolute;
+    bottom: 32px; left: 32px;
+    width: 280px; height: 280px;
+    background-image:
+      linear-gradient(45deg, transparent 47%, rgba(166,138,92,0.12) 48%, rgba(166,138,92,0.12) 52%, transparent 53%),
+      linear-gradient(-45deg, transparent 47%, rgba(166,138,92,0.12) 48%, rgba(166,138,92,0.12) 52%, transparent 53%);
+    background-size: 24px 24px;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  /* ---------- HEADER ---------- */
+  .header {
+    text-align: center;
+    border-bottom: 3px solid #F08D17;
+    padding-bottom: 22px;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+  }
+
+  .logo-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+
+  .logo-wrap img {
+    width: 360px;
+    height: auto;
+    display: block;
+  }
+
+  .title {
+    margin: 8px 0 6px;
+    font-size: 48px;
+    line-height: 1.10;
+    font-weight: 900;
+    color: #1D1E23;
+    letter-spacing: -0.8px;
+    text-transform: none;
+    background: linear-gradient(180deg, #F08D17 0%, #D8780A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 1px 0 rgba(29,30,35,0.08));
+  }
+
+  .title-accent {
+    display: block;
+    width: 110px;
+    height: 4px;
+    background: linear-gradient(90deg, #F08D17 0%, #A68A5C 100%);
+    margin: 6px auto 10px;
+    border-radius: 2px;
+  }
+
+  .subtitle {
+    margin: 4px 0 8px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1D1E23;
+    letter-spacing: 0.5px;
+  }
+
+  .event {
+    display: inline-block;
+    margin: 0;
+    padding: 6px 18px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1D1E23;
+    letter-spacing: 0.8px;
+    background: linear-gradient(90deg, rgba(240,141,23,0.10) 0%, rgba(166,138,92,0.10) 100%);
+    border: 1px solid rgba(166,138,92,0.45);
+    border-radius: 999px;
+  }
+
+  /* ---------- RULES ---------- */
+  .rules {
+    margin-top: 28px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 16px;
+    font-size: 24px;
+    font-weight: 900;
+    color: #1D1E23;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .section-title::before,
+  .section-title::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #A68A5C, transparent);
+  }
+
+  .section-title .diamond {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #F08D17;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  .rules ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 22px;
+  }
+
+  .rules li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 17.5px;
+    line-height: 1.35;
+    color: #1D1E23;
+    font-weight: 500;
+  }
+
+  .rules li .icon {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 1;
+    margin-top: 1px;
+  }
+
+  .rules li.do .icon   { background: #F08D17; color: #FBF7F0; }
+  .rules li.dont .icon  { background: #1D1E23; color: #F08D17; }
+  .rules li.warn .icon  { background: #A68A5C; color: #FBF7F0; }
+
+  /* ---------- CONTACTS ---------- */
+  .contacts {
+    margin-top: 22px;
+    background:
+      linear-gradient(135deg, #F08D17 0%, #E07A0A 60%, #C8680A 100%);
+    color: #FBF7F0;
+    border: 3px solid #1D1E23;
+    border-radius: 16px;
+    padding: 18px 26px 20px;
+    position: relative;
+    z-index: 1;
+    box-shadow:
+      0 6px 0 #1D1E23,
+      inset 0 1px 0 rgba(255,255,255,0.25),
+      inset 0 -2px 0 rgba(0,0,0,0.10);
+  }
+
+  .contacts .section-title {
+    color: #1D1E23;
+    margin-bottom: 10px;
+  }
+  .contacts .section-title::before,
+  .contacts .section-title::after {
+    background: linear-gradient(90deg, transparent, #1D1E23, transparent);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-top: 6px;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(29, 30, 35, 0.10);
+    border-radius: 8px;
+    padding: 10px 6px;
+  }
+
+  .contact .glyph {
+    font-size: 28px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .contact .label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    opacity: 0.92;
+    margin-bottom: 2px;
+  }
+
+  .contact .number {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    color: #FBF7F0;
+  }
+
+  /* ---------- FOOTER ---------- */
+  .footer {
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 3px solid #F08D17;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tagline {
+    margin: 0 0 6px;
+    font-size: 24px;
+    font-weight: 800;
+    color: #1D1E23;
+    line-height: 1.2;
+  }
+
+  .thanks {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #A68A5C;
+    letter-spacing: 0.4px;
+  }
+
+  /* ---------- PRINT ---------- */
+  @media print {
+    body { background: white; padding: 0; }
+    .poster {
+      box-shadow: none;
+      border: 2px solid #1D1E23;
+      page-break-inside: avoid;
+    }
+  }
+
+  /* (Responsive preview transform rules removed — deliverable is a fixed 1080x1080 PNG,
+     and the transform: scale() rules caused Chrome headless to shrink the poster.) */
+</style>
+</head>
+<body>
+  <main class="poster" role="img" aria-label="Health Safety Notice for Rubanda Corporate League participants">
+
+    <header class="header">
+      <div class="logo-wrap">
+        <!-- Logo file must live next to this HTML: ./RCL_logo.svg -->
+        <img src="./RCL_logo.svg" alt="Rubanda Corporate League logo">
+      </div>
+      <h1 class="title">Play Fair • Network More • Stay Protected!</h1>
+      <span class="title-accent" aria-hidden="true"></span>
+      <p class="subtitle">Health Safety Guide for Participants</p>
+      <p class="event">5th Outing – 7th June 2026 &nbsp;|&nbsp; Kabirizi Playground</p>
+    </header>
+
+    <section class="rules" aria-label="Key participant rules">
+      <h2 class="section-title"><span class="diamond" aria-hidden="true"></span>Key Participant Health rules<span class="diamond" aria-hidden="true"></span></h2>
+      <ul>
+        <li class="do"><span class="icon">✓</span><span>Use ONLY the Main Entrance</span></li>
+        <li class="do"><span class="icon">✓</span><span>Wash hands</span></li>
+        <li class="do"><span class="icon">✓</span><span>Wear Mask</span></li>
+        <li class="do"><span class="icon">✓</span><span>Temperature checked</span></li>
+        <li class="dont"><span class="icon">!</span><span>Handshakes and hugs are strictly forbidden</span></li>
+        <li class="dont"><span class="icon">!</span><span>Do NOT share drinks, cups, plates, towels, or personal items</span></li>
+        <li class="do"><span class="icon">✓</span><span>Cover coughs and sneezes with your elbow or tissue</span></li>
+        <li class="warn"><span class="icon">⚠</span><span>If you feel sick (fever, headache, body pain, vomiting, etc.), <strong>Stay home</strong>. Do not come to the event.</span></li>
+      </ul>
+    </section>
+
+    <section class="contacts" aria-label="Emergency contacts">
+      <h2 class="section-title"><span class="diamond" aria-hidden="true"></span>Report any case<span class="diamond" aria-hidden="true"></span></h2>
+      <div class="contact-grid">
+        <div class="contact">
+          <div class="glyph">📞</div>
+          <div class="label">Ministry of Health</div>
+          <div class="number">0800-100-066</div>
+          <div class="label" style="margin-top:2px;opacity:0.85">Toll-Free</div>
+        </div>
+        <div class="contact">
+          <div class="glyph">✉️</div>
+          <div class="label">Free SMS Alert</div>
+          <div class="number">6767</div>
+        </div>
+        <div class="contact">
+          <div class="glyph">📲</div>
+          <div class="label">U-Report</div>
+          <div class="number">8500</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="tagline">We all enter together, play safe together, and leave healthy together!</p>
+      <p class="thanks">Thank you for supporting Rubanda Corporate League</p>
+    </footer>
+
+  </main>
+</body>
+</html>

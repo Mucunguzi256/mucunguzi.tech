@@ -36,6 +36,7 @@ const vitalikImage = resolvedAboutImages.length > 0 ? resolvedAboutImages[0] : n
 
     {/* Bio card */}
     <div class="bento-card bio-card reveal reveal-delay-1">
+      <span class="syntax-deco syntax-deco-tr">import&nbsp;</span>
       <p class="bio-text">{siteConfig.aboutMe}</p>
     </div>
 
@@ -43,6 +44,7 @@ const vitalikImage = resolvedAboutImages.length > 0 ? resolvedAboutImages[0] : n
     <div class="stats-skills-row reveal reveal-delay-3">
       {/* Stats card */}
       <div class="bento-card stats-card">
+        <span class="syntax-deco syntax-deco-tl">[&ensp;]</span>
         <div class="stats-grid">
           <div class="about-stat">
             <span class="about-stat-value">5+</span>
@@ -56,15 +58,12 @@ const vitalikImage = resolvedAboutImages.length > 0 ? resolvedAboutImages[0] : n
             <span class="about-stat-value">3</span>
             <span class="about-stat-label">Ventures active</span>
           </div>
-          <div class="about-stat">
-            <span class="about-stat-value">2</span>
-            <span class="about-stat-label">Countries deployed</span>
-          </div>
         </div>
       </div>
 
       {/* Skills card */}
       <div class="bento-card skills-card">
+        <span class="syntax-deco syntax-deco-tr">const&nbsp;</span>
         <div class="skills-tags">
           {siteConfig.skills.map((skill) => (
             <span class="skill-tag">{skill}</span>

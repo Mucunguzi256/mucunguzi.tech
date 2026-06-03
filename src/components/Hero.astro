@@ -14,6 +14,8 @@ const hasCalendly = siteConfig.social.calendly;
   <div class="hero-grid">
     {/* CARD 1 — Main content (spans 4 cols, 2 rows on desktop) */}
     <div class="bento-card hero-main">
+      <span class="syntax-deco syntax-deco-tl">&lt; &sol;&gt;</span>
+      <span class="syntax-deco syntax-deco-br">{  }  </span>
       {/* CLI Terminal animation */}
       <div class="cli-widget" id="cli-widget" aria-label="Terminal typing animation">
         <span class="cli-prompt">$</span>
@@ -43,6 +45,7 @@ const hasCalendly = siteConfig.social.calendly;
     {/* CARD 2 — Profile image (spans 2 cols) */}
     {heroImageSrc && (
       <div class="bento-card hero-photo-card">
+        <span class="syntax-deco syntax-deco-tl">/*&nbsp;</span>
         <div class="hero-photo-wrapper">
           <img
             src={heroImageSrc}
@@ -57,6 +60,7 @@ const hasCalendly = siteConfig.social.calendly;
 
     {/* CARD 3 — Social links (spans 2 cols) */}
     <div class="bento-card hero-social">
+      <span class="syntax-deco syntax-deco-tr">\%</span>
       <div class="social-row">
         {siteConfig.social.email && (
           <a href={`mailto:${siteConfig.social.email}`} aria-label="Email" class="social-icon" title="Email">
@@ -97,6 +101,7 @@ const hasCalendly = siteConfig.social.calendly;
 
     {/* CARD 4 — Stats (spans 4 cols) */}
     <div class="bento-card hero-stats">
+      <span class="syntax-deco syntax-deco-bl">=&gt;&nbsp; </span>
       <div class="stats-row">
         <div class="stat-item">
           <span class="stat-value">5+</span>
@@ -128,8 +133,8 @@ const hasCalendly = siteConfig.social.calendly;
 
     const lines = [
       "build --from uganda --global",
-      "ship --network mantle",
-      "mucunguzi --stack web3+ai",
+      "ship --network ethereum",
+      "deploy --protocol asilichain",
     ];
 
     let lineIdx = 0;
