@@ -2,8 +2,7 @@
 import { siteConfig } from "../config";
 
 const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
-const hasPublications =
-  siteConfig.publications && siteConfig.publications.length > 0;
+const hasPublications = siteConfig.publications && siteConfig.publications.length > 0;
 const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 const withBase = (path: string) => {
@@ -11,105 +10,327 @@ const withBase = (path: string) => {
   const cleanPath = path.replace(/^\/+/, "");
   return `${base}${cleanPath}`;
 };
-const logoSrc = siteConfig.logoImage?.src
-  ? withBase(siteConfig.logoImage.src)
-  : null;
+const logoSrc = siteConfig.logoImage?.src ? withBase(siteConfig.logoImage.src) : null;
 ---
 
-<header
-  id="header"
-  class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300"
->
-  <nav class="max-w-7xl mx-auto px-8 py-4">
-    <ul class="flex items-center gap-8 justify-center">
-      {
-        logoSrc && (
-          <li class="absolute left-8 top-1/2 -translate-y-1/2">
-            <a href="#hero" aria-label={siteConfig.name} class="block">
-              <img
-                src={logoSrc}
-                alt={siteConfig.logoImage?.alt || siteConfig.name}
-                class="h-11 w-auto object-contain transition-transform duration-300 hover:scale-105"
-                loading="eager"
-                decoding="async"
-              />
-            </a>
-          </li>
-        )
-      }
-      <li>
+<header id="header" class="nav-header">
+  <nav class="nav-inner">
+    {/* Logo */}
+    {logoSrc && (
+      <a href="#hero" aria-label={siteConfig.name} class="nav-logo">
+        <img
+          src={logoSrc}
+          alt={siteConfig.logoImage?.alt || siteConfig.name}
+          class="nav-logo-img"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+    )}
+
+    {/* Desktop nav links — centered */}
+    <ul class="nav-links">
+      <li><a href="#about" class="nav-link">About</a></li>
+      {hasProjects && <li><a href="#projects" class="nav-link">Projects</a></li>}
+      {hasPublications && <li><a href="#publications" class="nav-link">Publications</a></li>}
+      {hasExperience && <li><a href="#experience" class="nav-link">Experience</a></li>}
+      {hasEducation && <li><a href="#education" class="nav-link">Education</a></li>}
+    </ul>
+
+    {/* Desktop CTA */}
+    <div class="nav-cta">
+      <a
+        href={siteConfig.social.calendly || "https://calendly.com/moemucu"}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="cta-btn"
+      >
+        Let's Talk
+      </a>
+    </div>
+
+    {/* Mobile hamburger */}
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu" type="button">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line id="ham-line-1" x1="4" y1="7" x2="20" y2="7" />
+        <line id="ham-line-2" x1="4" y1="12" x2="20" y2="12" />
+        <line id="ham-line-3" x1="4" y1="17" x2="20" y2="17" />
+      </svg>
+    </button>
+  </nav>
+
+  {/* Mobile overlay menu */}
+  <div id="mobile-menu" class="mobile-overlay">
+    <ul class="mobile-links">
+      <li><a href="#about" class="mobile-link" onclick="toggleMobileMenu()">About</a></li>
+      {hasProjects && <li><a href="#projects" class="mobile-link" onclick="toggleMobileMenu()">Projects</a></li>}
+      {hasPublications && <li><a href="#publications" class="mobile-link" onclick="toggleMobileMenu()">Publications</a></li>}
+      {hasExperience && <li><a href="#experience" class="mobile-link" onclick="toggleMobileMenu()">Experience</a></li>}
+      {hasEducation && <li><a href="#education" class="mobile-link" onclick="toggleMobileMenu()">Education</a></li>}
+      <li style="margin-top: var(--space-6);">
         <a
-          href="#about"
-          class="text-gray-700 hover:text-black transition-colors font-medium"
+          href={siteConfig.social.calendly || "https://calendly.com/moemucu"}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mobile-cta"
         >
-          About
+          Let's Talk
         </a>
       </li>
-      {
-        hasProjects && (
-          <li>
-            <a
-              href="#projects"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Projects
-            </a>
-          </li>
-        )
-      }
-      {
-        hasPublications && (
-          <li>
-            <a
-              href="#publications"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Publications
-            </a>
-          </li>
-        )
-      }
-      {
-        hasExperience && (
-          <li>
-            <a
-              href="#experience"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Experience
-            </a>
-          </li>
-        )
-      }
-      {
-        hasEducation && (
-          <li>
-            <a
-              href="#education"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Education
-            </a>
-          </li>
-        )
-      }
     </ul>
-  </nav>
+  </div>
 </header>
 
 <script>
-  window.addEventListener("scroll", () => {
+  (() => {
     const header = document.getElementById("header");
-    if (window.scrollY > 100) {
-      header?.classList.add("bg-white/80", "backdrop-blur-sm");
-    } else {
-      header?.classList.remove("bg-white/80", "backdrop-blur-sm");
+    const hamburger = document.getElementById("hamburger-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    let isOpen = false;
+
+    // Scroll effect — add scrolled class
+    const onScroll = () => {
+      if (window.scrollY > 20) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    // Mobile menu toggle
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener("click", () => {
+        isOpen = !isOpen;
+        mobileMenu.classList.toggle("open", isOpen);
+        hamburger.classList.toggle("active", isOpen);
+        document.body.style.overflow = isOpen ? "hidden" : "";
+      });
     }
-  });
+
+    // Expose for inline onclick
+    window.toggleMobileMenu = () => {
+      isOpen = false;
+      mobileMenu?.classList.remove("open");
+      hamburger?.classList.remove("active");
+      document.body.style.overflow = "";
+    };
+  })();
 </script>
 
-<style>
-  html {
-    scroll-behavior: smooth;
+<style is:global>
+  /* Nav header — frosted glass */
+  .nav-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: oklch(14% 0.018 45 / 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid transparent;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .nav-header.scrolled {
+    background: oklch(14% 0.018 45 / 0.85);
+    border-bottom-color: oklch(30% 0.025 45);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 768px) {
+    .nav-inner {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  /* Logo */
+  .nav-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-logo-img {
+    height: 2.5rem;
+    width: auto;
+    object-fit: contain;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+  }
+
+  .nav-logo-img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Desktop nav links */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--fg-2);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    position: relative;
+    padding: 0.25rem 0;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.2s ease;
+    border-radius: var(--radius-full);
+  }
+
+  .nav-link:hover {
+    color: var(--accent);
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* CTA button */
+  .nav-cta {
+    flex-shrink: 0;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    background: var(--accent);
+    color: white;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .cta-btn:hover {
+    background: oklch(from var(--accent) calc(l + 0.05) c h);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--fg);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    transition: color 0.2s ease;
+    z-index: 60;
+  }
+
+  .hamburger:hover {
+    color: var(--accent);
+  }
+
+  .hamburger.active svg line:nth-child(1) {
+    transform: rotate(45deg) translate(2px, 2px);
+  }
+
+  .hamburger.active svg line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active svg line:nth-child(3) {
+    transform: rotate(-45deg) translate(2px, -2px);
+  }
+
+  /* Mobile overlay */
+  .mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: oklch(14% 0.018 45 / 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 55;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .mobile-overlay.open {
+    display: flex;
+    opacity: 1;
+  }
+
+  .mobile-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .mobile-link {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    color: var(--fg);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .mobile-link:hover {
+    color: var(--accent);
+  }
+
+  .mobile-cta {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--accent);
+    color: white;
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links,
+    .nav-cta {
+      display: none;
+    }
+
+    .hamburger {
+      display: block;
+    }
   }
 </style>

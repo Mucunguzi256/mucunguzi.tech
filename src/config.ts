@@ -48,9 +48,9 @@ export const siteConfig = {
     },
   ],
   aboutMe:
-    "Based in Kampala, Uganda. I've spent 5 years at the intersection of open source infrastructure, blockchain ecosystems, and African market realities. I organized Ethereum Uganda, contributed to EthNile, and built production systems for NGOs, SACCOs, and government-adjacent civic platforms before going all-in on AsiliChain and KlassApp.",
+    "Based in Kampala, Uganda. I have spent 5 years at the intersection of open source infrastructure, blockchain ecosystems, and African market realities. I organized Ethereum in Uganda, contributed to EthNile, and built production systems for NGOs, SACCOs, and government-adjacent civic platforms before going all-in on AsiliChain and KlassApp.",
   heroBio:
-    "I ship production Web3 systems. 5 years building across DeFi, civic tech, and EdTech for African markets — currently taking AsiliChain from pilot to scale on Mantle Network.",
+    "I ship production Web3 systems. 5 years building across DeFi, civic tech, and EdTech for African markets. Currently taking AsiliChain from pilot to scale on Mantle Network.",
   skills: [
     "PHP",
     "Solidity",
@@ -65,7 +65,7 @@ export const siteConfig = {
       name: "AsiliChain",
       number: "01",
       description:
-        "On-chain agricultural traceability and DeFi lending for Uganda's coffee supply chain — EUDR compliance, pre-harvest crop collateralisation, 60-second mobile payments.",
+        "On-chain agricultural traceability and DeFi lending for Uganda's coffee supply chain. EUDR compliance, pre-harvest crop collateralisation, 60-second mobile payments.",
       outcomeStat: "Pilot covers 200+ smallholder farmers, Bugisu region",
       link: "https://asilichain.github.io/docs/",
       skills: ["Mantle Network", "Solidity", "Next.js", "Chainlink", "Hedera HCS"],
@@ -75,19 +75,10 @@ export const siteConfig = {
       name: "KlassApp",
       number: "02",
       description:
-        "WhatsApp-first school management SaaS for East Africa — attendance, fees, parent comms, and timetabling via WhatsApp with zero app install required.",
+        "WhatsApp-first school management SaaS for East Africa. Attendance, fees, parent comms, and timetabling all through WhatsApp with zero app install required.",
       outcomeStat: "36-week build roadmap, MVP targeting Uganda launch 2026",
       link: "https://klassapp.xyz",
       skills: ["Laravel", "Evolution API", "Typebot", "n8n", "MTN MoMo"],
-    },
-    {
-      name: "Hope for Humanity",
-      number: "03",
-      description:
-        "Full donation platform for a Uganda-based charity — custom WordPress build with GiveWP and Flutterwave for local payment processing.",
-      outcomeStat: "Live donation processing in UGX via Flutterwave",
-      link: "https://hopeforhumanityug.org/",
-      skills: ["WordPress", "GiveWP", "Flutterwave", "PHP"],
     },
   ],
   experience: [
@@ -98,7 +89,7 @@ export const siteConfig = {
       bullets: [
         "Architected full Mantle Network smart contract system for crop collateralisation and EUDR traceability",
         "Integrated Chainlink price feeds and Hedera HCS for immutable supply chain audit logs",
-        "Leading pre-seed fundraising and grant applications across Celo Africa DAO and Core DAO",
+        "Leading pre-seed fundraising and grant applications across VCs",
       ],
     },
     {
@@ -122,12 +113,11 @@ export const siteConfig = {
       ],
     },
     {
-      company: "Ethereum Community",
-      title: "Community Contributor",
+      company: "Web3 Community",
+      title: "Community Organizer",
       dateRange: "2020 – Present",
       bullets: [
-        "Organized Ethereum Uganda meetups and EthNile contributor",
-        "Civic AI chatbot NRM Kimeeza — WhatsApp bot for citizen engagement",
+        "Organized web3 meetups and contributed to the EthNile ecosystem",
       ],
     },
   ],

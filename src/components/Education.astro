@@ -5,54 +5,62 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 
 {
   hasEducation && (
-    <section id="education" class="p-8 sm:p-12 md:p-16 lg:p-24">
-      <div>
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-          <div class="lg:col-span-4">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
-              Education
-            </h2>
-            <div
-              class="w-[75px] h-[5px] mt-2 rounded-full"
-              style={`background-color: ${siteConfig.accentColor}`}
-            />
-          </div>
+    <section id="education" class="section-container">
+      <div class="section-header">
+        <h2>Education</h2>
+        <div class="accent-bar" />
+      </div>
 
-          <div class="lg:col-span-8">
-            <div class="space-y-8">
-              {siteConfig.education.map((edu) => {
-                // Extract first URL from achievements if present
-                const firstUrl = edu.achievements.find((a) => a.startsWith("http"));
-                return (
-                  <a
-                    href={firstUrl || undefined}
-                    target={firstUrl ? "_blank" : undefined}
-                    rel={firstUrl ? "noopener noreferrer" : undefined}
-                    class="block bg-white rounded-lg shadow-sm border border-gray-100 p-4 sm:p-5 md:p-6 hover:shadow-md transition-shadow duration-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent-color)]"
-                    style={{ '--accent-color': siteConfig.accentColor }}
-                  >
-                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
-                      <div>
-                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
-                          {edu.degree}
-                        </h3>
-                        <p
-                          class="text-base sm:text-lg"
-                          style={`color: ${siteConfig.accentColor}`}
-                        >
-                          {edu.school}
-                        </p>
-                      </div>
-                      <span class="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-0">
-                        {edu.dateRange}
-                      </span>
-                    </div>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        </div>
+      <div class="max-w-3xl mx-auto space-y-5">
+        {
+          siteConfig.education.map((edu) => {
+            const firstUrl = edu.achievements.find((a) => a.startsWith("http"));
+            const Component = firstUrl ? "a" : "div";
+            const linkProps = firstUrl
+              ? {
+                  href: firstUrl,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                }
+              : {};
+
+            return (
+              <Component
+                {...linkProps}
+                class="bento-card reveal"
+                style={`
+                  padding: var(--space-5);
+                  display: block;
+                  text-decoration: none;
+                  cursor: ${firstUrl ? 'pointer' : 'default'};
+                `}
+              >
+                <div
+                  style={`
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    gap: var(--space-2);
+                    margin-bottom: var(--space-2);
+                  `}
+                >
+                  <div>
+                    <h3 style="font-family: var(--font-display); font-size: var(--text-lg); font-weight: 600; color: var(--fg);">
+                      {edu.degree}
+                    </h3>
+                    <p style="color: var(--accent-2); font-size: var(--text-base);">
+                      {edu.school}
+                    </p>
+                  </div>
+                  <span style="font-size: var(--text-sm); color: var(--fg-3); font-family: var(--font-mono); white-space: nowrap;">
+                    {edu.dateRange}
+                  </span>
+                </div>
+              </Component>
+            );
+          })
+        }
       </div>
     </section>
   )

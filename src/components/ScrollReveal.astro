@@ -1,0 +1,44 @@
+---
+// ScrollReveal — a light IntersectionObserver hook
+// Add .reveal to elements, .reveal.visible triggers the animation
+// Use .reveal-delay-1 through .reveal-delay-4 for staggered animations
+// Respects prefers-reduced-motion automatically (handled in CSS)
+---
+
+<script>
+(() => {
+  if (typeof window === "undefined") return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: "0px 0px -60px 0px",
+    }
+  );
+
+  // Observe all .reveal elements
+  const observeReveals = () => {
+    document.querySelectorAll(".reveal").forEach((el) => {
+      // Don't re-observe if already visible
+      if (!el.classList.contains("visible")) {
+        observer.observe(el);
+      }
+    });
+  };
+
+  // Initial observation
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", observeReveals);
+  } else {
+    observeReveals();
+  }
+})();
+</script>
