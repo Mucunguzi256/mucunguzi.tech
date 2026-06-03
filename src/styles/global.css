@@ -264,7 +264,8 @@
   position: absolute;
   font-family: var(--font-mono);
   font-size: var(--text-xs);
-  color: oklch(from var(--accent) l c h / 0.15);
+  color: var(--accent);
+  opacity: 0.35;
   pointer-events: none;
   user-select: none;
   line-height: 1;

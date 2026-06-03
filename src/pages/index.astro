@@ -64,17 +64,17 @@ const jsonLd = {
     <meta name="robots" content="index,follow" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteConfig.name} />
-    <meta property="og:title" content={`${siteConfig.name} - ${siteConfig.title}`} />
+    <meta property="og:title" content={`${siteConfig.name} — ${siteConfig.title}`} />
     <meta property="og:description" content={siteConfig.description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={socialImageUrl} />
     <meta property="og:image:alt" content={siteConfig.heroImage?.alt || siteConfig.logoImage?.alt || siteConfig.name} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`${siteConfig.name} - ${siteConfig.title}`} />
+    <meta name="twitter:title" content={`${siteConfig.name} — ${siteConfig.title}`} />
     <meta name="twitter:description" content={siteConfig.description} />
     <meta name="twitter:image" content={socialImageUrl} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-    <title>{`${siteConfig.name} - ${siteConfig.title}`}</title>
+    <title>{siteConfig.title}</title>
   </head>
 
   <body class="page-fade-in">
