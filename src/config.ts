@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Mucunguzi Moses",
   title: "Mucunguzi Moses — Fullstack Developer, Web3 & Blockchain in Uganda",
-  description: "Mucunguzi Moses is a Ugandan fullstack developer building African-first digital solutions. 5+ years in web3, blockchain, product development, and civic tech.",
+  description: "Mucunguzi Moses is a Ugandan fullstack developer building African-first digital solutions. 5+ years in Ethereum Uganda, EthNile, Web3, blockchain, product development, and African tech.",
   keywords: [
     "Mucunguzi Moses",
     "Mucunguzi",
@@ -13,8 +13,10 @@ export const siteConfig = {
     "Klassapp",
     "AsiliChain",
     "Makerere University",
+    "Ethereum Uganda",
     "EthNile",
     "coffee traceability blockchain",
+    "Tech",
     "African tech",
     "software development",
     "Web3",
@@ -48,7 +50,7 @@ export const siteConfig = {
     },
   ],
   aboutMe:
-    "Based in Kampala, Uganda. I have spent 5 years at the intersection of open source infrastructure, blockchain ecosystems, and African market realities. I organized Ethereum in Uganda, contributed to EthNile, and built production systems for NGOs, SACCOs, and government-adjacent civic platforms before going all-in on AsiliChain and KlassApp.",
+    "Based in Kampala, Uganda. I have spent 5 years at the intersection of open source infrastructure, blockchain ecosystems, and African tech. I organized Ethereum in Uganda, contributed to EthNile, built production systems for NGOs and SACCOs, and developed civic tech platforms before going all-in on AsiliChain and KlassApp.",
   heroBio:
     "I ship production Web3 systems. 5 years building across DeFi, civic tech, and EdTech for African markets. Currently taking AsiliChain from pilot to scale on Mantle Network.",
   skills: [
