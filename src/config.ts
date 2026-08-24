@@ -80,6 +80,15 @@ export const siteConfig = {
       link: "https://klassapp.xyz",
       skills: ["Laravel", "Evolution API", "Typebot", "n8n", "MTN MoMo"],
     },
+    {
+      name: "Guild Leaders Academy",
+      number: "03",
+      description:
+        "Non-partisan leadership development and regional convening platform nurturing ethical, visionary, and transformational leaders across East Africa. Four flagship programmes spanning mentorship, summits, innovation parks, and executive master classes.",
+      outcomeStat: "10,000+ former leaders convened, 8 countries, 3 regional summits",
+      link: "https://guildleaders.academy",
+      skills: ["Astro", "Web Design", "Leadership Programmes", "Regional Summits"],
+    },
   ],
   experience: [
     {
@@ -118,6 +127,16 @@ export const siteConfig = {
       dateRange: "2020 – Present",
       bullets: [
         "Organized EthNile and web3 meetups across Uganda",
+      ],
+    },
+    {
+      company: "Guild Presidents Leadership Academy",
+      title: "Web & Platform Developer",
+      dateRange: "2024 – Present",
+      bullets: [
+        "Designed and built the GPLA website on Astro with African-inspired UI patterns",
+        "Supporting digital presence for 3 regional summits with 10,000+ leaders convened",
+        "Maintaining platform across programs, summits, gallery, and publications",
       ],
     },
   ],
