@@ -56,8 +56,8 @@ export const siteConfig = {
     "Solidity",
     "React",
     "Next.js",
-    "Hedera HCS",
-    "Chainlink",
+    "MCPs",
+    "Smart Contracts",
     "TypeScript",
   ],
   projects: [
