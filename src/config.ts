@@ -84,7 +84,7 @@ export const siteConfig = {
       name: "Guild Leaders Academy",
       number: "03",
       description:
-        "Non-partisan leadership development and regional convening platform nurturing ethical, visionary, and transformational leaders across East Africa. Four flagship programmes spanning mentorship, summits, innovation parks, and executive master classes.",
+        "Leadership development and regional convening platform nurturing ethical, visionary, and transformational leaders across East Africa. Four flagship programmes spanning mentorship, summits, innovation parks, and executive master classes.",
       outcomeStat: "10,000+ former leaders convened, 8 countries, 3 regional summits",
       link: "https://guildleaders.academy",
       skills: ["Astro", "Web Design", "Leadership Programmes", "Regional Summits"],
