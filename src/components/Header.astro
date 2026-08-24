@@ -30,11 +30,11 @@ const logoSrc = siteConfig.logoImage?.src ? withBase(siteConfig.logoImage.src) :
 
     {/* Desktop nav links — centered */}
     <ul class="nav-links">
-      <li><a href="#about" class="nav-link">About</a></li>
-      {hasProjects && <li><a href="#projects" class="nav-link">Projects</a></li>}
-      {hasPublications && <li><a href="#publications" class="nav-link">Publications</a></li>}
-      {hasExperience && <li><a href="#experience" class="nav-link">Experience</a></li>}
-      {hasEducation && <li><a href="#education" class="nav-link">Education</a></li>}
+    <li><a href="#about" class="nav-link">About</a></li>
+    {hasProjects && <li><a href="#projects" class="nav-link">Projects</a></li>}
+    {hasPublications && <li><a href="#publications" class="nav-link">Publications</a></li>}
+    {hasExperience && <li><a href="#experience" class="nav-link">Experience</a></li>}
+    {hasEducation && <li><a href="#education" class="nav-link">Education</a></li>}
     </ul>
 
     {/* Desktop CTA */}
@@ -59,27 +59,29 @@ const logoSrc = siteConfig.logoImage?.src ? withBase(siteConfig.logoImage.src) :
     </button>
   </nav>
 
-  {/* Mobile overlay menu */}
-  <div id="mobile-menu" class="mobile-overlay">
-    <ul class="mobile-links">
-      <li><a href="#about" class="mobile-link" onclick="toggleMobileMenu()">About</a></li>
-      {hasProjects && <li><a href="#projects" class="mobile-link" onclick="toggleMobileMenu()">Projects</a></li>}
-      {hasPublications && <li><a href="#publications" class="mobile-link" onclick="toggleMobileMenu()">Publications</a></li>}
-      {hasExperience && <li><a href="#experience" class="mobile-link" onclick="toggleMobileMenu()">Experience</a></li>}
-      {hasEducation && <li><a href="#education" class="mobile-link" onclick="toggleMobileMenu()">Education</a></li>}
-      <li style="margin-top: var(--space-6);">
-        <a
-          href={siteConfig.social.calendly || "https://calendly.com/moemucu"}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="mobile-cta"
-        >
-          Let's Talk
-        </a>
-      </li>
-    </ul>
-  </div>
 </header>
+
+{/* Mobile overlay menu — kept outside <header> so `position: fixed` resolves
+   against the viewport rather than the header's backdrop-filter containing block */}
+<div id="mobile-menu" class="mobile-overlay">
+  <ul class="mobile-links">
+    <li><a href="#about" class="mobile-link" onclick="toggleMobileMenu()">About</a></li>
+    {hasProjects && <li><a href="#projects" class="mobile-link" onclick="toggleMobileMenu()">Projects</a></li>}
+    {hasPublications && <li><a href="#publications" class="mobile-link" onclick="toggleMobileMenu()">Publications</a></li>}
+    {hasExperience && <li><a href="#experience" class="mobile-link" onclick="toggleMobileMenu()">Experience</a></li>}
+    {hasEducation && <li><a href="#education" class="mobile-link" onclick="toggleMobileMenu()">Education</a></li>}
+    <li style="margin-top: var(--space-6);">
+      <a
+        href={siteConfig.social.calendly || "https://calendly.com/moemucu"}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mobile-cta"
+      >
+        Let's Talk
+      </a>
+    </li>
+  </ul>
+</div>
 
 <script>
   (() => {
@@ -256,8 +258,13 @@ const logoSrc = siteConfig.logoImage?.src ? withBase(siteConfig.logoImage.src) :
     color: var(--accent);
   }
 
+  .hamburger svg line {
+    transform-origin: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
   .hamburger.active svg line:nth-child(1) {
-    transform: rotate(45deg) translate(2px, 2px);
+    transform: translateY(5px) rotate(45deg);
   }
 
   .hamburger.active svg line:nth-child(2) {
@@ -265,7 +272,7 @@ const logoSrc = siteConfig.logoImage?.src ? withBase(siteConfig.logoImage.src) :
   }
 
   .hamburger.active svg line:nth-child(3) {
-    transform: rotate(-45deg) translate(2px, -2px);
+    transform: translateY(-5px) rotate(-45deg);
   }
 
   /* Mobile overlay */
@@ -276,10 +283,12 @@ const logoSrc = siteConfig.logoImage?.src ? withBase(siteConfig.logoImage.src) :
     background: oklch(14% 0.018 45 / 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    z-index: 55;
+    z-index: 45;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 5rem 1.5rem 2rem;
+    overflow-y: auto;
     opacity: 0;
     transition: opacity 0.3s ease;
   }
